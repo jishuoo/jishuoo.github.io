@@ -1,39 +1,83 @@
-* {
+.contain {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    background-color: rgba(206, 206, 206, 0.486)
 }
 
 .container {
     width: 800px;
-    margin: 0% auto;
-    background-image: url("bg.jpg");
-    padding: 5px 10px 5px 10px;
+    margin: 0 auto
 }
 
-.text {
-    font-size: 12px;
-    color: slategrey;
+.line2 {
+    background-color: #102b44;
+    height: 250px
+}
+
+.line3 {
+    background-color: #102b44;
+    height: 250px
+}
+
+.line4 {
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+}
+
+.left {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 50px 70px 10px 100px;
+    background-color: rgb(255, 255, 255);
+    z-index: 999;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.right {
+    float: right;
+    width: 300px;
+    height: 150px;
+    margin: 50px 70px 10px 100px;
+    color: #ffffff
+}
+
+.headtext{
+font-weight: bolder
+}
+
+.text{
     line-height: 20px;
-    margin: 5px 10px 10px 20px
+    font-size: 10pt;
+    text-align: justify
 }
 
-h3 {
-    font-size: 16px;
-    color: sandybrown;
-    background-color: #ffffff;
-    padding: 7px;
+.text2{
+    line-height: 17px;
+    font-size: 8pt;
+    text-align: justify
 }
 
-.end {
+.spleft{
+    float: left;
+    width: 300px;
+    height: 150px;
+    margin: 50px 40px 10px 100px;
+    color: #ffffff;
+}
+
+.spright{
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin:50px 10px 10px 60px;
+    z-index: 999;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.ta{
     font-size: 14px;
-    text-align: center;
-}
-
-a {
-    color: black
-}
-
-table {
-    text-align: center
+    padding-top: 10px;
+    padding-left: 300px
 }
