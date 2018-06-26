@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Black Jack</title>
+    <style>
+            body {
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url("2.jpg");
+                color: white;
+                text-align: center
+        
+            }
+        </style>
+</head>
+
+
+<body>
+   
+    <center>
+        <br>
+        <h1>Black Jack</h1>
+        <br>
+        <form>
+
+            <table style="width: 27%" height="15%">
+                <tr>
+                    <td>
+                        <h2>Dealer</h2>
+                    </td>
+                    <td>
+                        <input TYPE=text name=dealer size="15" > Points</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>You</h2>
+                    </td>
+                    <td>
+                        <input TYPE=text name=you size="15"> Points</td>
+                </tr>
+            </table>
+
+            <p>
+
+                <input type="button" value="Another" onClick=User(this.form)>
+                <input type="button" value="Show" onClick="Dealer(this.form);LookAtHands(this.form);">
+                <input type="button" value="Clear" onClick=NewHand(this.form)>
+    </center>
+    </div>
+</body>
+
+<script>
+        //产生随机函数
+        function random(max) {
+            return Math.floor(Math.random() * max + 1);
+        }
+
+        //设置卡牌数字，在21点中，J、Q、K计10，A计11
+        function cardValue(card) {
+            if (card == 1)
+                return 11;
+            if (card > 10)
+                return 10;
+            return card;
+        }
+        //模拟发牌效果
+        function PickACard(strWho) {
+            card = random(13);
+            return cardValue(card);
+        }
+
+        //计算卡牌点数和
+        function NewHand(form) {
+            form.dealer.value = 0;
+            form.you.value = 0;
+            form.dealer.value = eval(form.dealer.value) + PickACard("Dealer");
+            form.you.value = eval(form.you.value) + PickACard("You");
+        }
+
+        //计算dealer点数有没有爆
+        function Dealer(form) {
+            while (form.dealer.value < 17) {
+                form.dealer.value = eval(form.dealer.value) + PickACard("Dealer");
+            }
+        }
+
+        //计算you点数有没有爆
+        function User(form) {
+            form.you.value = eval(form.you.value) + PickACard("You");
+            if (form.you.value > 21) {
+                alert("Boom.");
+            }
+        }
+
+        //比较结果
+        function LookAtHands(form) {
+            if (form.dealer.value > 21) {
+                alert("You win.");
+            } else if (form.you.value > form.dealer.value) {
+                alert("You win.");
+            } else
+            if (form.dealer.value == form.you.value) {
+                alert("Draw.");
+            } else {
+                alert("Deal wins.");
+            }
+        }
+    </script>
+
+
+</html>
